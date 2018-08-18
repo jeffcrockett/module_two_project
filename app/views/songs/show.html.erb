@@ -2,6 +2,6 @@
 <div class="jumbotron">
     <h1 class="display-3"><%=@song.name%></h1>
     <% @song.lines.each do |line| %>
-    <p class="lead"><%= line.name%></p>
+    <p class="lead"><%= link_to line.name, line_path(line)%></p>
     <% end %>
 </div>
