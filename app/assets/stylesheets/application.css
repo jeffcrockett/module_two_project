@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ a {
+     color: darkslategray;
+ }
+
+ a:hover {
+     color: black;;
+ }
+
+ .notes {
+    background: green;
+    text-align: right;
+}

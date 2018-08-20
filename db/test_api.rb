@@ -58,5 +58,5 @@ class Parser
 # tracks = album_ids.each_with_object({}) do |(key, value), obj| obj[key] = album_tracks_from(value) end
 # puts tracks
 end
-    parser = Parser.new(160)
-    puts parser.albums_songs_lyrics_hash(parser.albums_songs_hash(parser.album_ids))
+    # parser = Parser.new(160)
+    # puts parser.albums_songs_lyrics_hash(parser.albums_songs_hash(parser.album_ids))

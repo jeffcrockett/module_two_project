@@ -40,6 +40,8 @@ group :development, :test do
   # gem 'nokogiri'
   # gem 'open-uri'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rest-client'
+  gem 'json'
   gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

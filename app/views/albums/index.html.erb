@@ -1,0 +1,5 @@
+<div class="jumbotron">
+<% @albums.each do |album| %>
+    <h1 class="display-3"><%=link_to album.name, album_path(album)%></h1>
+<% end %>
+</div>
