@@ -1,5 +1,9 @@
 <div class="jumbotron">
-<% @albums.each do |album| %>
-    <h1 class="display-3"><%=link_to album.name, album_path(album)%></h1>
+<% @artists.each do |artist| %>
+<h3 class="display-4"><%=artist.name%></h3>
+<% artist.albums.order(:name).each do |album|%>
+    <p class="lead"><%=link_to album.name, album_path(album)%></p>
+<% end %>
+<hr>
 <% end %>
 </div>

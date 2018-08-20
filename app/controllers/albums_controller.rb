@@ -4,7 +4,8 @@ class AlbumsController < ApplicationController
     end
 
     def index 
-        @albums = Album.all 
+        @artists = Artist.all.order(:name)
+        @albums = Album.all.order(:name) 
     end
 
     private

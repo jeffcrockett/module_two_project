@@ -1,0 +1,5 @@
+<%= form_for line.notes.build do |f| %>
+<%= f.hidden_field :line_id %>
+<%= f.text_area :name %>
+<%= f.submit %>
+<% end %>

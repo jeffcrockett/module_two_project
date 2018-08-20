@@ -1,6 +1,6 @@
 <div class="jumbotron">
     <h1 class="display-3"><%= @artist.name %></h1>
-    <% @artist.albums.each do |album| %>
+    <% @artist.albums.order(:name).each do |album| %>
     <p class="lead"><%= link_to album.name, album_path(album)%></p>
     <% end %>
 </div>

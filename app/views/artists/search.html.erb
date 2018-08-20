@@ -1,0 +1,8 @@
+<% @potential_artists.each do |key, value|%>
+<form action="seed" method="post">
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<input class="btn btn-secondary my-2 my-sm-0" value="<%= key %>" name="artist_name">
+ - <input class="btn btn-secondary my-2 my-sm-0" name="artist_id" value="<%= value %>">
+ <input type="submit" value="Add this artist">
+</form>
+<% end %>

@@ -1,4 +1,11 @@
 <div class="jumbotron">
-<table><tr><td>
     <h1 class="display-3"><%= @line.name %></h1>
 </div>
+<div>
+<% @line.notes.each do |note|%>
+<p><%= note.name %> <%=link_to 'Edit note', edit_note_path(note)%>
+<%= link_to 'Delete note', note_path(note), method: 'delete' %>
+</p>
+<% end %>
+</div>
+<%= render partial: 'notes/form', locals: {line: @line}%>
