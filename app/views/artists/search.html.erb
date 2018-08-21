@@ -1,8 +1,11 @@
+<div class="jumbotron">
+  <h2>Select an artist</h2><br>
 <% @potential_artists.each do |key, value|%>
 <form action="seed" method="post">
 <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-<input class="btn btn-secondary my-2 my-sm-0" value="<%= key %>" name="artist_name">
- - <input class="btn btn-secondary my-2 my-sm-0" name="artist_id" value="<%= value %>">
- <input type="submit" value="Add this artist">
-</form>
+<input type="hidden" value="<%= key %>" name="artist_name">
+<input type="hidden" name="artist_id" value="<%= value %>">
+ <input type="submit" class="btn btn-secondary btn-block col-md-6" value="<%= key %>">
+</form><br>
 <% end %>
+</div>
