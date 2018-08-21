@@ -1,5 +1,5 @@
 <div class="jumbotron">
-<% @artists.each do |artist| %>
+<% @artists.order(:name).each do |artist| %>
     <h1 class="display-3"><%=link_to artist.name, artist_path(artist)%></h1>
 <% end %>
 </div>

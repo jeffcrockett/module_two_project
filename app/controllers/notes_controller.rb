@@ -1,21 +1,21 @@
 class NotesController < ApplicationController
     before_action :set_note, only: [:show, :edit, :update, :destroy]
-    
-    def new 
+
+    def new
     end
 
     def create
         @note = Note.create(note_params)
-        redirect_to line_path(@note.line)      
+        redirect_to line_path(@note.line)
     end
 
-    def edit 
+    def edit
 
     end
 
-    def update 
+    def update
         @note.update(note_params)
-        if @note.save 
+        if @note.save
             redirect_to line_path(@note.line)
         else
             redirect_to edit_note_path(@note)
@@ -23,8 +23,8 @@ class NotesController < ApplicationController
     end
 
     def destroy
-        line = @note.line 
-        @note.destroy 
+        line = @note.line
+        @note.destroy
         redirect_to song_path(line.song)
     end
 
@@ -34,8 +34,8 @@ class NotesController < ApplicationController
         @note = Note.find(params[:id])
     end
 
-    def note_params 
-        params.require(:note).permit(:name, :line_id)
+    def note_params
+        params.require(:note).permit(:name, :line_id, :user_id)
     end
 
 end

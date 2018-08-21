@@ -1,11 +1,24 @@
 <div class="jumbotron">
     <h1 class="display-3"><%= @line.name %></h1>
 </div>
-<div>
-<% @line.notes.each do |note|%>
-<p><%= note.name %> <%=link_to 'Edit note', edit_note_path(note)%>
-<%= link_to 'Delete note', note_path(note), method: 'delete' %>
-</p>
+<div class='col-md-8' style="float:right">
+  <table class="table table-hover">
+    <tr>
+      <th>User</th>
+      <th>Note</th>
+      <th>Action</th>
+    </tr>
+  <% @line.notes.each do |note|%>
+    <tr>
+      <td><%= note.user.username %></td>
+      <td><%= note.name %></td>
+      <td><%=link_to 'Edit ', edit_note_path(note)%><br>
+       <%= link_to 'Delete ', note_path(note), method: 'delete' %></td>
+    </tr>
 <% end %>
+</table>
 </div>
-<%= render partial: 'notes/form', locals: {line: @line}%>
+<div class="col-md-4">
+  <h3>New Note</h3>
+  <%= render partial: 'notes/form', locals: {line: @line}%>
+</div>

@@ -1,0 +1,11 @@
+<div class='jumbotron'><h3>Welcome <%= @user.username %></h3>
+<hr>
+
+<h4>Recent Notes</h4>
+
+  <% @user.notes.each do |note| %>
+    <p>"<%= note.line.name %>"<p>
+    <p>Your thoughts: <%= note.name %></p>
+  <hr>
+  <% end %>
+</div>
