@@ -1,6 +1,6 @@
 <div class="jumbotron">
     <h3 class="display-3"><%= @album.name %></h3>
     <% @album.songs.each do |song| %>
-    <p class="lead"><%= link_to song.name, song_path(song)%></p>
+    <p class="lead"><%= link_to song.name, song_path(song) unless song.lines.length == 0 %></p>
     <% end %>
 </div>

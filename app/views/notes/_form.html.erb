@@ -1,8 +1,6 @@
-
-
 <%= form_for line.notes.build do |f| %>
 <%= f.hidden_field :line_id %>
-<%= f.text_area :name, class:'form-control' %><br>
-<%= f.collection_select :user_id, User.all, :id, :username, {prompt: 'Select User'}, {:class => 'form-control'} %><br>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
+<%= f.text_area :name, class:'form-control', placeholder:'Your comments' %><br>
 <%= f.submit class:'form-control' %>
 <% end %>

@@ -1,14 +1,5 @@
-<h3>Welcome</h3>
-<h4>Sign up</h4>
-<%= form_for @user, :url => users_path do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+<div class="jumbotron">
+  <h2 class="display-2">Welcome</h2>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit %>
-<% end %>
+  <h2 style="font-weight:lighter"><%= link_to "Login", login_path %> or <%= link_to "Register", new_user_path %></h2>
+</div>
