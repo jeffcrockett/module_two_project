@@ -25,3 +25,8 @@
     background: green;
     text-align: right;
 }
+
+footer p {
+  text-align:center;
+  font-size:smaller;
+}
