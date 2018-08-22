@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :albums
   resources :artists
   resources :analytics, only: :index
-  post 'search', to: 'artists#search'
-  post 'seed', to: 'artists#seed'
+  post '/search', to: 'artists#search'
+  post '/seed', to: 'artists#seed'
   root 'welcome#home'
   resources :users, only: [:new, :create, :show]
   
