@@ -1,11 +1,20 @@
 <div class='jumbotron'><h3>Welcome <%= @user.username %></h3>
 <hr>
+  <div class="col-md-6" style="float:right;">
+  <h4>Analytics</h4>
+    <p><strong>Most commented on artist:</strong> <%= @user.most_commented_on_artist %></p>
+    <p><strong>Most commented on song:</strong> <%= @user.most_commented_on_song %></p>
+    <p><strong>Most commented on album:</strong> <%= @user.most_commented_on_album %></p>
 
+  </div>
+<div class="col-md-6">
 <h4>Recent Notes</h4>
 
   <% @user.notes.each do |note| %>
-    <p>"<%= note.line.name %>"<p>
+    <p>"<%= link_to note.line.name, line_path(note.line) %>"<p>
     <p>Your thoughts: <%= note.name %></p>
   <hr>
   <% end %>
+  </div>
+<br><br><br>
 </div>

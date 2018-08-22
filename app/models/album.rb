@@ -3,4 +3,8 @@ class Album < ApplicationRecord
     has_many :songs
     has_many :lines, through: :songs 
     has_many :notes, through: :lines 
+
+    def self.largest
+        self.all.sort_by do |album| album.songs.length end.last
+    end
 end

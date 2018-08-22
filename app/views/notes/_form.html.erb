@@ -1,6 +1,6 @@
 <%= form_for line.notes.build do |f| %>
 <%= f.hidden_field :line_id %>
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
-<%= f.text_area :name, class:'form-control', placeholder:'Your comments' %><br>
+<%= f.text_area :name, class:'form-control' %><br>
 <%= f.submit class:'form-control' %>
 <% end %>

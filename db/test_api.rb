@@ -23,7 +23,7 @@ class Parser
     end
 
     def album_tracks_from(album_id)
-        json = JSON.parse(RestClient.get("https://api.musixmatch.com/ws/1.1/album.tracks.get?format=jsonp&callback=callback&album_id=#{album_id}&page=1&page_size=2&apikey=1d628b26f4bb8472f6ad706b87f6be07").body[9..-3])
+        json = JSON.parse(RestClient.get("https://api.musixmatch.com/ws/1.1/album.tracks.get?format=jsonp&callback=callback&album_id=#{album_id}&apikey=1d628b26f4bb8472f6ad706b87f6be07").body[9..-3])
         json['message']['body']['track_list'].each_with_object({}) do |track, obj|
             name = track['track']['track_name']
             id = track['track']['track_id']

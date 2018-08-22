@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if @user
       @user.id
     else
-      @user = User.find_by(id: session[:user_id])
+      @user = User.find_by(id: session[:user_id]).id
     end
   end
 end

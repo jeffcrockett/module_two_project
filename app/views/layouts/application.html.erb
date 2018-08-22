@@ -12,7 +12,7 @@
   <body>
   <div class="bs-component">
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="<%= root_path %>">Flatiron</a>
+                <a class="navbar-brand" href="<%= session[:user_id] ? user_path(session[:user_id]) : root_path %>">Flatiron</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,6 +28,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="<%=songs_path%>">Songs</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<%=analytics_path%>">Analytics</a>
+                    </li>
 
                     <form action = 'search' method = 'post' class="form-inline my-2 my-lg-0">
                       <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
@@ -36,9 +39,15 @@
                     </form>
                   </ul>
                   <ul class="navbar-nav navbar-right">
+                  <% if session[:user_id]%>
+                      <li class="nav-item active">
+                      <a class="nav-link" href="<%=user_path(session[:user_id])%>">Profile <span class="sr-only">(current)</span></a>
+                    </li>
+                    <% else %>
                     <li class="nav-item right">
                       <a class="nav-link" href="<%= login_path %>">Login</a>
                     </li>
+                    <% end %>
                     <li class="nav-item right">
                       <%= link_to 'Logout', logout_path, method: :post, class: 'nav-link' %>
                     </li>

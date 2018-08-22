@@ -13,6 +13,11 @@ class ArtistsController < ApplicationController
         parser = Parser.new(id)
         # byebug
         parser.seed(artist_name)
+        Song.all.select do |song| 
+            song.word_count == 0 
+        end.each do |song|
+            song.destroy 
+        end
  
         redirect_to artists_path
 
