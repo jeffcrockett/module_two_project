@@ -11,11 +11,23 @@
 <h4>Recent Notes</h4>
 
   <% @user.notes.each do |note| %>
-    <p>"<%= link_to note.line.name, line_path(note.line) %>"<p>
-    <p>Your thoughts: <%= note.name %></p>
-  <hr>
-  <% end %>
+  <div class="card bg-light mb-3">
+    <div class="card-body">
+      <h4 class="card-title">
+        “<%= link_to note.line.name, line_path(note.line) %>”
+      </h4>
+      <h6 class="card-subtitle mb-2 text-muted">
+        From <%= link_to note.album_name, album_path(note.album) %>, by <%= link_to note.artist_name, artist_path(note.artist) %>
+      </h6>
+      <hr>
+      <p class="card-text">
+        <%= note.name %>
+      </p>
+    </div>
   </div>
+  <% end %>
+</div>
+
 <br><br><br>
 
 </div>
