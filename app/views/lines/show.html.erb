@@ -1,5 +1,5 @@
 <div class="jumbotron">
-<p><strong><%= @line.artist.name%></strong> - <%= @line.album.name %></p>
+<p><strong><%= link_to @line.artist.name, artist_path(@line.artist)%></strong> - <%= link_to @line.album.name, album_path(@line.album) %></p>
     <h1 class="display-3"><%= @line.name %></h1>
 </div>
 <div class='col-md-8' style="float:right">

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'ordered_by_albums' => 'analytics#ordered_by_albums' 
   get 'ordered_by_songs' => 'analytics#ordered_by_songs' 
   get 'ordered_by_lyrics' => 'analytics#ordered_by_lyrics' 
+  get 'filter_artists' => 'artists#filter_artists'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

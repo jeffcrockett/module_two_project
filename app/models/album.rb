@@ -7,4 +7,8 @@ class Album < ApplicationRecord
     def self.largest
         self.all.sort_by do |album| album.songs.length end.last
     end
+
+    def artist_name
+        artist ? artist.name : nil 
+    end
 end

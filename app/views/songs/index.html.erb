@@ -1,6 +1,6 @@
-<div class="jumbotron">
+
 <div class="row">
-  <nav class="col-md-2 sidebar">
+  <nav class="col-md-2 sidebar" style="background: rgb(247, 248, 249)">
     <div class="sidebar-sticky" style="position:fixed;">
       <ul class="nav flex-column">
         <% @artists.each do |artist| %>
@@ -9,7 +9,8 @@
       </ul>
     </div>
   </nav>
-  <div class="col-lg-9">
+  <div class="col-lg-10" style="margin-left:-15px;">
+  <div class="jumbotron">
     <% @artists.each do |artist| %>
     <h3 class="display-4" id="<%= artist.id %>"><%= artist.name %></h3>
     <% artist.unique_songs.each do |song| %>

@@ -10,7 +10,7 @@ class NotesController < ApplicationController
     end
 
     def edit
-
+        @line = @note.line
     end
 
     def update

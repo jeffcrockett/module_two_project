@@ -33,21 +33,21 @@
               <div class="card bg-light mb-3 col-md-4">
                 <div class="card-body">
                   <h4 class="card-title">Most frequent notemaker</h4>
-                  <p class="card-text"><%= @most_frequent_notemaker %></p>
+                  <p class="card-text"><%= @most_frequent_notemaker %> (<%= @note_count %> notes)</p>
                 </div>
               </div>
 
               <div class="card bg-light mb-3 col-md-4">
                 <div class="card-body">
                   <h4 class="card-title">Longest song</h4>
-                  <p class="card-text"><%= link_to @longest_song.name, song_path(@longest_song) %></p>
+                  <p class="card-text"><%= link_to @longest_song.name, song_path(@longest_song) %> (<%= @line_count %> lines)</p>
                 </div>
               </div>
 
               <div class="card bg-light mb-3 col-md-4">
                 <div class="card-body">
                   <h4 class="card-title">Largest album</h4>
-                  <p class="card-text"><%= link_to @largest_album.name, album_path(@largest_album) %></p>
+                  <p class="card-text"><%= link_to @largest_album.name, album_path(@largest_album) %> (<%= @song_count %> songs)</p>
                 </div>
               </div>
             </div>

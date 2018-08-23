@@ -24,7 +24,10 @@ before_action :sorting_things, only: [:index, :ordered_by_albums, :ordered_by_so
 
     def sorting_things
       @most_frequent_notemaker = User.most_notes.username
+      @note_count = User.most_notes.notes.count
       @longest_song = Song.longest
+      @line_count = @longest_song.lines.count
       @largest_album = Album.largest
+      @song_count = @largest_album.songs.count
     end
 end

@@ -3,9 +3,19 @@ class Song < ApplicationRecord
     has_many :lines
     has_many :notes, through: :lines
 
+    def album_name
+        album ? album.name : nil 
+    end
+    
     def artist
         album ? album.artist : nil 
     end
+
+    def artist_name 
+        artist ? artist.name : nil
+    end
+
+
 
     def all_words
         lines.map do |line| line.name.downcase.gsub(/[!',\.]/, '').split(' ') end.flatten

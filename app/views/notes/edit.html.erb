@@ -1,4 +1,29 @@
-<%= form_for @note do |f| %>
-<%= f.text_area :name %>
-<%= f.submit %>
+<div class="jumbotron">
+<p><strong><%= link_to @line.artist.name, artist_path(@line.artist)%></strong> - <%= link_to @line.album.name, album_path(@line.album) %></p>
+    <h1 class="display-3"><%= @line.name %></h1>
+</div>
+<div class='col-md-8' style="float:right">
+  <table class="table table-hover">
+    <tr>
+      <th>User</th>
+      <th>Note</th>
+      <th>Action</th>
+    </tr>
+  <% @line.notes.each do |note|%>
+    <tr>
+      <td><%= note.user.username %></td>
+      <td><%= note.name %></td>
+      <td><%=link_to 'Edit ', edit_note_path(note)%><br>
+       <%= link_to 'Delete ', note_path(note), method: 'delete' %></td>
+    </tr>
 <% end %>
+</table>
+</div>
+<div class="col-md-4">
+  <h3>New Note</h3>
+<%= form_for @note do |f| %>
+<%= f.text_area :name, class: 'form-control' %>
+<br>
+<%= f.submit class: 'form-control' %>
+<% end %>
+</div>
