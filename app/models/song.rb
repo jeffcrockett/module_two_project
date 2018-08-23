@@ -26,7 +26,7 @@ class Song < ApplicationRecord
     end
 
     def words_ratio
-        all_words.uniq.length / word_count
+        all_words.uniq.length / word_count.to_f
     end
 
     def self.longest

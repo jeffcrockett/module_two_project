@@ -16,6 +16,10 @@ class Artist < ApplicationRecord
         lines.count 
     end
 
+    def vocabulary_score
+         ((songs.map(&:words_ratio).reduce(:+) / songs.length) * 100).round(2)
+    end
+
     def unique_songs
         songs.map(&:name).uniq.map do |title| Song.where(name: title).first end.sort_by do |song| song.name end
     end
@@ -30,6 +34,10 @@ class Artist < ApplicationRecord
 
     def self.ordered_by_lyrics_count
         self.all.sort_by do |artist| artist.total_lyrics end.reverse
+    end
+
+    def self.ordered_by_vocabulary_score
+        self.all.sort_by do |artist| artist.vocabulary_score end.reverse
     end
 
 

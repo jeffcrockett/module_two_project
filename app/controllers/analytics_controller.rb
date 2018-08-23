@@ -1,5 +1,5 @@
 class AnalyticsController < ApplicationController
-before_action :sorting_things, only: [:index, :ordered_by_albums, :ordered_by_songs, :ordered_by_lyrics]
+before_action :sorting_things, only: [:index, :ordered_by_albums, :ordered_by_songs, :ordered_by_lyrics, :ordered_by_vocabulary_score]
 
     def index
         @artists = Artist.all
@@ -18,6 +18,12 @@ before_action :sorting_things, only: [:index, :ordered_by_albums, :ordered_by_so
     def ordered_by_lyrics
         @artists = Artist.ordered_by_lyrics_count
         render :index
+    end
+
+    def ordered_by_vocabulary_score
+        @artists = Artist.ordered_by_vocabulary_score
+        render :index
+
     end
 
     private

@@ -4,7 +4,9 @@
               <h1 id="tables">Artists</h1>
               Order by: <a href="ordered_by_albums">Albums</a> |
               <a href="ordered_by_songs">Songs</a> |
-              <a href="ordered_by_lyrics">Lyrics</a>
+              <a href="ordered_by_lyrics">Lyrics</a> |
+              <a href="ordered_by_vocabulary_score">Vocabulary Score</a>
+
             </div>
 
             <div class="bs-component">
@@ -15,6 +17,7 @@
                     <th scope="col">Total Albums</th>
                     <th scope="col">Total Songs</th>
                     <th scope="col">Total Lyrics</th>
+                    <th scope="col">Vocabulary Score*</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -24,6 +27,8 @@
                     <td><%= artist.total_albums %></td>
                     <td><%= artist.total_songs %></td>
                     <td><%= artist.total_lyrics %></td>
+                    <td><%= artist.vocabulary_score %></td>
+
                   </tr>
                   <% end %>
                 </tbody>
@@ -54,4 +59,6 @@
             </div>
             </div>
           </div>
+          * An artist's vocabulary score is calculated by dividing the number of unique words in their songs by the total number of words.
         </div>
+
