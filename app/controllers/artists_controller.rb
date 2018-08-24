@@ -30,7 +30,7 @@ class ArtistsController < ApplicationController
             .gsub(/,+/, '%2C')
             .gsub(/\//, '%2F')
             .gsub(/\\/, '%5C')
-        json = JSON.parse(RestClient.get("https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=#{formatted_query}&apikey=1d628b26f4bb8472f6ad706b87f6be07").body[9..-3])
+        json = JSON.parse(RestClient.get("https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&q_artist=#{formatted_query}&apikey=#{RAILS_API_KEY}").body[9..-3])
         @potential_artists = json['message']['body']['artist_list'].each_with_object({}) do |hash, obj| 
             name = hash['artist']['artist_name'] 
             id = hash['artist']['artist_id']
